@@ -3,7 +3,7 @@ import pandas as pd
 import json
 
 class NewsSummarizationAgent:
-    def __init__(self, model_name="t5-small", dataset_path="news_dataset/2020_processed.json"):
+    def __init__(self, model_name="Kallia/t5-small-finetuned-stock-news", dataset_path="news_dataset/2020_processed.json"):
         self.summarizer = pipeline("summarization", model=model_name)
         with open(dataset_path, "r", encoding="utf-8") as f:
             self.dataset = json.load(f)  # Simulated "news API"
